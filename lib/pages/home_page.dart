@@ -1,5 +1,7 @@
 import 'package:fl_astrology/pages/card_pick_page.dart';
+import 'package:fl_astrology/pages/musics_page.dart';
 import 'package:fl_astrology/pages/question_page.dart';
+import 'package:fl_astrology/pages/sky_page.dart';
 import 'package:fl_astrology/widgets/custom_bottom_bar.dart';
 import 'package:fl_astrology/widgets/home_list_card.dart';
 import 'package:flutter/material.dart';
@@ -114,11 +116,20 @@ class _HomePageState extends State<HomePage> {
                     height: 20,
                   ),
                   HomeListCard(
-                      title: 'Şarkılara Sor',
-                      description:
-                          'Bilmek istediğin sorunun cevabı belki de şarkılarda yatıyor.',
-                      icon: Icons.music_note,
-                      color: Color.fromRGBO(160, 91, 248, 1)),
+                    title: 'Şarkılara Sor',
+                    description:
+                        'Bilmek istediğin sorunun cevabı belki de şarkılarda yatıyor.',
+                    icon: Icons.music_note,
+                    color: Color.fromRGBO(160, 91, 248, 1),
+                    onPress: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MusicsPage(),
+                        ),
+                      );
+                    },
+                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -127,7 +138,14 @@ class _HomePageState extends State<HomePage> {
                       description:
                           'Bilmek istediğin sorunun cevabı belki de gökyüzünde yatıyor.',
                       icon: Icons.cloud,
-                      color: Color.fromRGBO(42, 150, 251, 1)),
+                      color: Color.fromRGBO(42, 150, 251, 1),onPress: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SkyPage(),
+                        ),
+                      );
+                    },),
                 ],
               ),
             )),

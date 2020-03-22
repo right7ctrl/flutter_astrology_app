@@ -7,6 +7,7 @@ class CustomPageScaffold extends StatelessWidget {
   final String title;
   final Widget body;
   final Color pageColor;
+  final bool hasButton;
 
   const CustomPageScaffold(
       {Key key,
@@ -15,6 +16,7 @@ class CustomPageScaffold extends StatelessWidget {
       this.body,
       this.pageColor,
       this.buttonTitle,
+      this.hasButton = true,
       this.onButtonPressed})
       : super(key: key);
   @override
@@ -86,6 +88,7 @@ class CustomPageScaffold extends StatelessWidget {
                         ),
                         padding: EdgeInsets.all(16),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Expanded(
                               child: SingleChildScrollView(
@@ -94,30 +97,31 @@ class CustomPageScaffold extends StatelessWidget {
                                 child: this.body,
                               ),
                             ),
-                            Material(
-                              borderRadius: BorderRadius.circular(16),
-                              color: this.pageColor,
-                              child: InkWell(
-                                borderRadius: BorderRadius.circular(16),
-                                onTap: (){
-                                  this.onButtonPressed();
-                                },
-                                child: Container(
-                                  height: 54,
-                                  width: double.infinity,
-                                  child: Center(
-                                    child: Text(
-                                      '$buttonTitle',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w600,
-                                          letterSpacing: 1.1),
+                            this.hasButton
+                                ? Material(
+                                    borderRadius: BorderRadius.circular(16),
+                                    color: this.pageColor,
+                                    child: InkWell(
+                                      borderRadius: BorderRadius.circular(16),
+                                      onTap: () {
+                                        this.onButtonPressed();
+                                      },
+                                      child: Container(
+                                        height: 54,
+                                        width: double.infinity,
+                                        child: Center(
+                                          child: Text(
+                                            '$buttonTitle',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              ),
-                            )
+                                  )
+                                : Container(),
                           ],
                         ),
                       ),
