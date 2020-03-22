@@ -1,5 +1,7 @@
+import 'package:fl_astrology/pages/card_pick_page.dart';
 import 'package:fl_astrology/pages/question_page.dart';
 import 'package:fl_astrology/widgets/custom_bottom_bar.dart';
+import 'package:fl_astrology/widgets/home_list_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,10 +22,6 @@ class _HomePageState extends State<HomePage> {
           setState(() {
             _currentTab = val;
           });
-          if (val == 1) {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => QuestionPage()));
-          }
         },
         items: [
           CustomBottomBarItem(icon: Icons.home),
@@ -79,25 +77,43 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.all(16),
               child: Column(
                 children: <Widget>[
-                  _homeListCard(
-                      title: 'Soru Sor',
-                      description:
-                          'Bilmek istediğin sorunun cevabı belki de sorularda yatıyor.',
-                      icon: Icons.zoom_out_map,
-                      color: Color.fromRGBO(254, 87, 65, 1)),
+                  HomeListCard(
+                    title: 'Soru Sor',
+                    description:
+                        'Bilmek istediğin sorunun cevabı belki de sorularda yatıyor.',
+                    icon: Icons.zoom_out_map,
+                    color: Color.fromRGBO(254, 87, 65, 1),
+                    onPress: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => QuestionPage(),
+                        ),
+                      );
+                    },
+                  ),
                   SizedBox(
                     height: 20,
                   ),
-                  _homeListCard(
-                      title: 'Kart Seç',
-                      description:
-                          'Bilmek istediğin sorunun cevabı belki de kartlarda yatıyor.',
-                      icon: Icons.card_travel,
-                      color: Color.fromRGBO(0, 234, 150, 1)),
+                  HomeListCard(
+                    title: 'Kart Seç',
+                    description:
+                        'Bilmek istediğin sorunun cevabı belki de kartlarda yatıyor.',
+                    icon: Icons.card_travel,
+                    color: Color.fromRGBO(0, 234, 150, 1),
+                    onPress: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CardPickPage(),
+                        ),
+                      );
+                    },
+                  ),
                   SizedBox(
                     height: 20,
                   ),
-                  _homeListCard(
+                  HomeListCard(
                       title: 'Şarkılara Sor',
                       description:
                           'Bilmek istediğin sorunun cevabı belki de şarkılarda yatıyor.',
@@ -106,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 20,
                   ),
-                  _homeListCard(
+                  HomeListCard(
                       title: 'Gökyüzüne Sor',
                       description:
                           'Bilmek istediğin sorunun cevabı belki de gökyüzünde yatıyor.',
@@ -117,58 +133,6 @@ class _HomePageState extends State<HomePage> {
             )),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _homeListCard(
-      {@required String title,
-      @required String description,
-      @required IconData icon,
-      @required Color color}) {
-    return Material(
-      color: Colors.white,
-      elevation: 4,
-      shadowColor: Colors.black12,
-      borderRadius: BorderRadius.circular(8),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Icon(
-              icon,
-              size: 40,
-              color: color,
-            ),
-            SizedBox(
-              width: 12,
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 2),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      '$title',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromRGBO(81, 83, 103, 1),
-                      ),
-                    ),
-                    Text(
-                      '$description',
-                      style: TextStyle(color: Color.fromRGBO(180, 184, 203, 1)),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
-        width: double.infinity,
       ),
     );
   }
