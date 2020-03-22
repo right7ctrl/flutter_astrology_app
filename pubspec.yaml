@@ -57,8 +57,9 @@ flutter:
   fonts:
     - family: SecondaRound
       fonts:
-        - asset: fonts/seconda_round_bold.ttf
-        - asset: fonts/seconda_round_regular.ttf
+        - asset: assets/seconda_round_bold.ttf
+          weight: 700
+        - asset: assets/seconda_round_regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
