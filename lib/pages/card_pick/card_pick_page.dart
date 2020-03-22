@@ -1,3 +1,4 @@
+import 'package:fl_astrology/pages/card_pick/card_pick_second.dart';
 import 'package:fl_astrology/scaffolds/custom_page_scaffold.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,14 @@ class CardPickPage extends StatelessWidget {
         onBackPressed: () {
           Navigator.pop(context);
         },
-        onButtonPressed: () {},
+        onButtonPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CardPickSecond(),
+            ),
+          );
+        },
         pageColor: Color.fromRGBO(0, 234, 150, 1),
       ),
     );

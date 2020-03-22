@@ -1,3 +1,4 @@
+import 'package:fl_astrology/pages/music/music_second.dart';
 import 'package:fl_astrology/scaffolds/custom_page_scaffold.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +18,14 @@ class MusicsPage extends StatelessWidget {
           Navigator.pop(context);
         },
         onButtonPressed: () {
-          
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MusicSecond(),
+            ),
+          );
         },
-        pageColor: Color.fromRGBO(160,91,248, 1),
+        pageColor: Color.fromRGBO(160, 91, 248, 1),
       ),
     );
   }

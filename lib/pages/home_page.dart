@@ -1,10 +1,11 @@
-import 'package:fl_astrology/pages/card_pick_page.dart';
-import 'package:fl_astrology/pages/musics_page.dart';
 import 'package:fl_astrology/pages/question_page.dart';
 import 'package:fl_astrology/pages/sky_page.dart';
 import 'package:fl_astrology/widgets/custom_bottom_bar.dart';
 import 'package:fl_astrology/widgets/home_list_card.dart';
 import 'package:flutter/material.dart';
+
+import 'card_pick/card_pick_page.dart';
+import 'music/musics_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
