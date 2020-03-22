@@ -1,3 +1,4 @@
+import 'package:fl_astrology/pages/question_page.dart';
 import 'package:fl_astrology/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -12,22 +13,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(247, 248, 251, 1),
-      bottomNavigationBar: Container(
-          child: CustomBottomBar(
+      bottomNavigationBar: CustomBottomBar(
         currentIndex: _currentTab,
         onTap: (int val) {
           if (val == _currentTab) return;
           setState(() {
             _currentTab = val;
           });
+          if (val == 1) {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => QuestionPage()));
+          }
         },
         items: [
           CustomBottomBarItem(icon: Icons.home),
           CustomBottomBarItem(icon: Icons.bookmark),
-          CustomBottomBarItem(icon: Icons.home),
-          CustomBottomBarItem(icon: Icons.home)
+          CustomBottomBarItem(icon: Icons.person),
+          CustomBottomBarItem(icon: Icons.settings)
         ],
-      )),
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
