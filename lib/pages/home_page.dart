@@ -1,3 +1,4 @@
+import 'package:fl_astrology/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -6,40 +7,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _currentTab = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(247, 248, 251, 1),
       bottomNavigationBar: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Material(
-              color: Color.fromRGBO(244, 245, 251, 1),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-              child: Container(
-                padding:
-                    EdgeInsets.only(bottom: 24, left: 12, right: 12, top: 8),
-                child: Icon(
-                  Icons.home,
-                  size: 32,
-                  color: Color.fromRGBO(69, 107, 255, 1),
-                ),
-              ),
-            ),
-            Icon(Icons.ac_unit),
-            Icon(Icons.ac_unit),
-            Icon(Icons.ac_unit),
-          ],
-        ),
-      ),
+          child: CustomBottomBar(
+        currentIndex: _currentTab,
+        onTap: (int val) {
+          if (val == _currentTab) return;
+          setState(() {
+            _currentTab = val;
+          });
+        },
+        items: [
+          CustomBottomBarItem(icon: Icons.home),
+          CustomBottomBarItem(icon: Icons.bookmark),
+          CustomBottomBarItem(icon: Icons.home),
+          CustomBottomBarItem(icon: Icons.home)
+        ],
+      )),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(16.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -78,9 +72,8 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
                 child: SingleChildScrollView(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(16),
               child: Column(
-                
                 children: <Widget>[
                   _homeListCard(
                       title: 'Soru Sor',
