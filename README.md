@@ -1,16 +1,13 @@
-# fl_astrology
+# Flutter Astrology App
 
-A new Flutter project.
 
-## Getting Started
+[![See it on dribbble](https://icons.iconarchive.com/icons/danleech/simple/64/dribbble-icon.png)](https://dribbble.com/huzeyfe)
+[![See it on dribbble](https://cdn.dribbble.com/users/898669/screenshots/9873401/media/165224a37ac3aaa5980a8c2cd8072245.png)](https://dribbble.com/shots/9873401/attachments/1906651?mode=media)
+[![See it on dribbble](https://cdn.dribbble.com/users/898669/screenshots/9873401/media/c94f766677f7677d322ae7f3b5e642ce.png)](https://dribbble.com/shots/9873401/attachments/1906651?mode=media)
+[![See it on dribbble](https://cdn.dribbble.com/users/898669/screenshots/9873401/media/4a56c235accdca7f85fd08e8c4718d70.png)](https://dribbble.com/shots/9873401/attachments/1906651?mode=media)
+[![See it on dribbble](https://cdn.dribbble.com/users/898669/screenshots/9873401/media/41c046832e9389383c8b8e0668613c72.png)](https://dribbble.com/shots/9873401/attachments/1906651?mode=media)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### - Credits
+Follow the ui designer on dribbble.
+[Emre Huzeyfe Baştaş](https://dribbble.com/huzeyfe)

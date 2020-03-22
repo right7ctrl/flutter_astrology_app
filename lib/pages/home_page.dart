@@ -134,18 +134,20 @@ class _HomePageState extends State<HomePage> {
                     height: 20,
                   ),
                   HomeListCard(
-                      title: 'Gökyüzüne Sor',
-                      description:
-                          'Bilmek istediğin sorunun cevabı belki de gökyüzünde yatıyor.',
-                      icon: Icons.cloud,
-                      color: Color.fromRGBO(42, 150, 251, 1),onPress: () {
+                    title: 'Gökyüzüne Sor',
+                    description:
+                        'Bilmek istediğin sorunun cevabı belki de gökyüzünde yatıyor.',
+                    icon: Icons.cloud,
+                    color: Color.fromRGBO(42, 150, 251, 1),
+                    onPress: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => SkyPage(),
                         ),
                       );
-                    },),
+                    },
+                  ),
                 ],
               ),
             )),
